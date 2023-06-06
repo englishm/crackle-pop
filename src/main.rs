@@ -1,17 +1,20 @@
+fn crackle_pop(n: i32) -> String {
+    let mut buf = String::with_capacity("CracklePop\n".len());
+
+    if n % 3 == 0 {
+        buf.push_str("Crackle")
+    }
+    if n % 5 == 0 {
+        buf.push_str("Pop")
+    }
+    if buf.len() == 0 {
+        buf.push_str(&format!("{}", n))
+    }
+    return buf;
+}
+
 fn main() {
     for n in 1..=100 {
-        if n % 3 == 0 && n % 5 == 0 {
-            println!("CracklePop");
-            continue;
-        }
-        if n % 3 == 0 {
-            println!("Crackle");
-            continue;
-        }
-        if n % 5 == 0 {
-            println!("Pop");
-            continue;
-        }
-        println!("{}", n);
+        println!("{}", crackle_pop(n));
     }
 }
