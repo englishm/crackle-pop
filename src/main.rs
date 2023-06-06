@@ -10,11 +10,12 @@ fn crackle_pop(n: i32) -> String {
     if buf.len() == 0 {
         buf.push_str(&n.to_string())
     }
+    buf.push('\n');
     return buf;
 }
 
 fn main() {
     for n in 1..=100 {
-        println!("{}", crackle_pop(n));
+        print!("{}", crackle_pop(n));
     }
 }
