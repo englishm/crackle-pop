@@ -18,7 +18,7 @@ fn crackle_pop(n: i32) -> String {
 
 fn main() -> Result<(), io::Error> {
     for n in 1..=100 {
-        write!(io::stdout(), "{}", crackle_pop(n))?;
+        io::stdout().write_all(crackle_pop(n).as_bytes())?;
     }
     Ok(())
 }
