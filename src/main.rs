@@ -1,3 +1,5 @@
+use std::io::{self, Write};
+
 fn crackle_pop(n: i32) -> String {
     let mut buf = String::with_capacity("CracklePop\n".len());
 
@@ -14,8 +16,9 @@ fn crackle_pop(n: i32) -> String {
     return buf;
 }
 
-fn main() {
+fn main() -> Result<(), io::Error> {
     for n in 1..=100 {
-        print!("{}", crackle_pop(n));
+        write!(io::stdout(), "{}", crackle_pop(n))?;
     }
+    Ok(())
 }
