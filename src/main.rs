@@ -8,7 +8,7 @@ fn crackle_pop(n: i32) -> String {
         buf.push_str("Pop")
     }
     if buf.len() == 0 {
-        buf.push_str(&format!("{}", n))
+        buf.push_str(&n.to_string())
     }
     return buf;
 }
