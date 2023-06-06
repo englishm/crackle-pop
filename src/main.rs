@@ -12,6 +12,6 @@ fn main() {
             println!("Pop");
             continue;
         }
-        println!("n: {}", n);
+        println!("{}", n);
     }
 }
